@@ -1,0 +1,83 @@
+# =========================
+
+# Visual Studio / .NET
+
+# =========================
+
+# Carpetas de compilación
+
+bin/
+obj/
+
+# Archivos de usuario
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Carpeta de Visual Studio (MUY IMPORTANTE)
+
+.vs/
+
+# Rider / VS Code (opcional)
+
+.idea/
+.vscode/
+
+# Logs
+
+*.log
+
+# Archivos temporales
+
+*.tmp
+*.temp
+
+# Archivos de sistema
+
+.DS_Store
+Thumbs.db
+
+# Paquetes NuGet
+
+*.nupkg
+packages/
+
+# Archivos de publicación
+
+publish/
+
+# Archivos generados
+
+*.cache
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pdb
+*.exe
+*.dll
+
+# Configs locales (opcional, cuidado si compartes configs)
+
+appsettings.Development.json
+
+# IIS Express
+
+.vs/
+*.vsconfig
+
+# Archivos de cobertura de tests
+
+*.coverage
+*.coveragexml
+
+# Resharper
+
+_ReSharper*/
+*.DotSettings.user
+
+# Otros
+
+*.bak
+*.swp

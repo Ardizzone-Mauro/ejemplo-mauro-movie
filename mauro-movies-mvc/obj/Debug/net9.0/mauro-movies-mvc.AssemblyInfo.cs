@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mauro-movies-mvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+524e3cdff175a815fd0ac50b0d39a690d61dad22")]
 [assembly: System.Reflection.AssemblyProductAttribute("mauro-movies-mvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mauro-movies-mvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
