@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\views\\pelicula\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\views\\pelicula\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\controllers\\peliculacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\controllers\\peliculacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\views\\pelicula\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\views\\pelicula\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\controllers\\plataformacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\controllers\\plataformacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\controllers\\generocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\controllers\\generocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|c:\\users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A51B3A97-6621-48F0-9392-41E52C9544D4}|mauro-movies-mvc\\mauro-movies-mvc.csproj|solutionrelative:mauro-movies-mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,80 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Pelicula\\Create.cshtml",
-              "RelativeDocumentMoniker": "mauro-movies-mvc\\Views\\Pelicula\\Create.cshtml",
-              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Pelicula\\Create.cshtml",
-              "RelativeToolTip": "mauro-movies-mvc\\Views\\Pelicula\\Create.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T03:52:01.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Pelicula\\Index.cshtml",
-              "RelativeDocumentMoniker": "mauro-movies-mvc\\Views\\Pelicula\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Pelicula\\Index.cshtml",
-              "RelativeToolTip": "mauro-movies-mvc\\Views\\Pelicula\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T02:16:34.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PeliculaController.cs",
-              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\PeliculaController.cs",
-              "RelativeDocumentMoniker": "mauro-movies-mvc\\Controllers\\PeliculaController.cs",
-              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\PeliculaController.cs",
-              "RelativeToolTip": "mauro-movies-mvc\\Controllers\\PeliculaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "mauro-movies-mvc\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "mauro-movies-mvc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T02:09:07.54Z",
+              "WhenOpened": "2026-03-20T06:07:34.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlataformaController.cs",
-              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\PlataformaController.cs",
-              "RelativeDocumentMoniker": "mauro-movies-mvc\\Controllers\\PlataformaController.cs",
-              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\PlataformaController.cs",
-              "RelativeToolTip": "mauro-movies-mvc\\Controllers\\PlataformaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T01:59:25.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "mauro-movies-mvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "mauro-movies-mvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAACAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "mauro-movies-mvc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "mauro-movies-mvc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAOUBAAAAAAAAAAAAAO4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T01:56:05.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GeneroController.cs",
-              "DocumentMoniker": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\GeneroController.cs",
-              "RelativeDocumentMoniker": "mauro-movies-mvc\\Controllers\\GeneroController.cs",
-              "ToolTip": "C:\\Users\\mauro\\source\\repos\\ejemplo-mauro-movie\\mauro-movies-mvc\\Controllers\\GeneroController.cs",
-              "RelativeToolTip": "mauro-movies-mvc\\Controllers\\GeneroController.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T01:52:59.029Z",
+              "WhenOpened": "2026-03-20T05:17:46.13Z",
               "EditorCaption": ""
             }
           ]

@@ -29,3 +29,132 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Estilos personalizados para los botones de acción en la tabla de películas */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-weight: 600;
+  border-radius: .35rem;
+  padding: .35rem .6rem;
+  box-shadow: 0 2px 6px rgba(18, 38, 63, 0.06);
+  transition: transform .08s ease, box-shadow .12s ease, filter .08s ease;
+}
+
+/* Paleta armónica: verde para ver, azul para editar, rojo/rojo-oscuro para eliminar */
+.action-btn.btn-success {
+  background-color: #2ecc71;
+  border-color: #28b463;
+  color: #fff;
+}
+.action-btn.btn-success:hover,
+.action-btn.btn-success:focus {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+.action-btn.btn-primary {
+  background-color: #3498db;
+  border-color: #2d85c9;
+  color: #fff;
+}
+.action-btn.btn-primary:hover,
+.action-btn.btn-primary:focus {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+.action-btn.btn-danger {
+  background-color: #e74c3c;
+  border-color: #dd3f2f;
+  color: #fff;
+}
+.action-btn.btn-danger:hover,
+.action-btn.btn-danger:focus {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+/* Ajustes pequeños para iconos dentro de botones */
+.action-btn .bi {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ==================== MODO OSCURO ==================== */
+
+/* Ajustes de tema para mejor compatibilidad con Bootstrap 5 dark mode */
+[data-bs-theme="dark"] .navbar {
+  background-color: var(--bs-dark) !important;
+  border-color: var(--bs-border-color-translucent) !important;
+}
+
+[data-bs-theme="dark"] .table {
+  border-color: var(--bs-border-color-translucent);
+}
+
+[data-bs-theme="dark"] .table thead th {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-border-color-translucent);
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+  color: var(--bs-secondary-color);
+  border-color: var(--bs-border-color-translucent);
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary:hover {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  color: white;
+}
+
+[data-bs-theme="dark"] .footer {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-border-color-translucent);
+}
+
+/* Mejorar visibilidad de botones de acción en modo oscuro */
+[data-bs-theme="dark"] .action-btn.btn-success {
+  background-color: #27ae60;
+  border-color: #229954;
+}
+
+[data-bs-theme="dark"] .action-btn.btn-primary {
+  background-color: #2980b9;
+  border-color: #1f618d;
+}
+
+[data-bs-theme="dark"] .action-btn.btn-danger {
+  background-color: #c0392b;
+  border-color: #a93226;
+}
+
+/* Ajustes para tablas DataTables en modo oscuro */
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
+
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_filter input {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  border-color: var(--bs-border-color-translucent);
+}
+
+[data-bs-theme="dark"] .dataTables_wrapper .dataTables_length select {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  border-color: var(--bs-border-color-translucent);
+}
+
+[data-bs-theme="dark"] .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}

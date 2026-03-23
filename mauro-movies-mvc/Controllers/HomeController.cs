@@ -1,21 +1,26 @@
 using System.Diagnostics;
+using mauro_movies_mvc.Data;
 using mauro_movies_mvc.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace mauro_movies_mvc.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly MovieDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MovieDbContext context)
         {
             _logger = logger;
+            _context = context ;
         }
 
-        public IActionResult Index()
+        public async Task< IActionResult> Index()
         {
-            return View();
+            var Peliculas = await _context.Peliculas.ToListAsync();
+            return View(Peliculas);
         }
 
         public IActionResult Privacy()

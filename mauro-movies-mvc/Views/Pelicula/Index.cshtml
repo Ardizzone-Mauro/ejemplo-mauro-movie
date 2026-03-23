@@ -1,53 +1,96 @@
 ﻿@model IEnumerable<mauro_movies_mvc.Models.Pelicula>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Películas";
 }
 
-<h1>Index</h1>
+<div class="container-fluid mt-4">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Imagen
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Plataforma)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-               <img src="@item.PosterUrlPortada" height="60px"/>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Plataforma.Nombre)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+    <div class="row mb-3">
+        <div class="col-12">
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Crear Nueva Película
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table id="peliculasTable" class="table table-striped table-hover dt-responsive nowrap w-100">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Título</th>
+                            <th>Género</th>
+                            <th>Plataforma</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@item.PosterUrlPortada" alt="@item.Titulo" height="60px" class="rounded" />
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.Titulo)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Genero.Descripcion)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Plataforma.Nombre)</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success action-btn" title="Ver">
+                                            <i class="bi bi-eye"></i> Ver
+                                        </a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary action-btn" title="Editar">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger action-btn" title="Eliminar">
+                                            <i class="bi bi-trash"></i> Eliminar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#peliculasTable').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json'
+                },
+                responsive: true,
+                paging: true,
+                searching: true,
+                ordering: true,
+                info: true,
+                pageLength: 10,
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todos"]],
+                columnDefs: [
+                    {
+                        targets: 0,
+                        orderable: false,
+                        searchable: false
+                    },
+                    {
+                        targets: -1,
+                        orderable: false,
+                        searchable: false
+                    }
+                ]
+            });
+        });
+    </script>
 }
-    </tbody>
-</table>

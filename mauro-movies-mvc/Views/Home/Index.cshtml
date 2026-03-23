@@ -1,8 +1,494 @@
-﻿@{
+﻿@model List<Pelicula>
+
+
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+
+
+<style>
+    :root {
+        --primary-accent: #E50914;
+        --surface-bg: #0e0e0e;
+        --surface-container: #1a1a1a;
+        --surface-container-low: #131313;
+        --on-surface: #ffffff;
+        --on-surface-variant: #adaaaa;
+        --secondary: #37bcf7;
+        --tertiary: #d7a0ff;
+    }
+
+    body {
+        background-color: var(--surface-bg);
+        color: var(--on-surface);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .navbar {
+        background-color: rgba(14, 14, 14, 0.7);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        height: 80px;
+        padding: 0 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* .navbar-brand {
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: var(--primary-accent) !important;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+    } */
+
+    /* .nav-link {
+        color: var(--on-surface-variant) !important;
+        font-weight: 500;
+        letter-spacing: -0.2px;
+        padding: 0.5rem 1rem !important;
+        transition: color 0.3s ease;
+    } */
+
+        .nav-link.active {
+            color: #fff !important;
+            border-bottom: 2px solid var(--primary-accent);
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+        }
+
+    .btn-icon {
+        background: transparent;
+        border: none;
+        color: var(--on-surface);
+        padding: 8px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+        .btn-icon:hover {
+            background: var(--surface-container);
+            transform: scale(0.95);
+        }
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        height: 90vh;
+        min-height: 700px;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 100px;
+        overflow: hidden;
+    }
+
+    .hero-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+        .hero-backdrop img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+
+    .hero-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, var(--surface-bg) 0%, transparent 60%), linear-gradient(to right, var(--surface-bg) 0%, transparent 70%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(229, 9, 20, 0.2);
+        color: #ff7668;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border: 1px solid rgba(229, 9, 20, 0.3);
+        border-radius: 2px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 6rem;
+        font-weight: 900;
+        letter-spacing: -4px;
+        line-height: 0.9;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+        color: var(--on-surface-variant);
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    .genre-badge {
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 2px 8px;
+        border: 1px solid var(--on-surface-variant);
+    }
+
+    .btn-primary-custom {
+        background: linear-gradient(90deg, #e80f16, #ff8e80);
+        border: none;
+        color: #650003;
+        font-weight: 700;
+        padding: 1rem 2.5rem;
+        border-radius: 4px;
+        transition: transform 0.2s ease;
+    }
+
+        .btn-primary-custom:hover {
+            transform: scale(1.05);
+            color: #650003;
+        }
+
+    .btn-secondary-custom {
+        background: var(--surface-container);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-weight: 700;
+        padding: 1rem 2.5rem;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+    }
+
+        .btn-secondary-custom:hover {
+            background: #2c2c2c;
+            color: #fff;
+        }
+
+    /* Bento Grid */
+    .bento-section {
+        background-color: var(--surface-container-low);
+        padding: 80px 0;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .section-title {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin-bottom: 0.25rem;
+    }
+
+    .section-subtitle {
+        font-size: 12px;
+        color: var(--on-surface-variant);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .view-all-link {
+        color: var(--primary-accent);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 2px solid var(--primary-accent);
+        padding-bottom: 4px;
+    }
+
+    .bento-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 300px);
+        gap: 1.5rem;
+    }
+
+    .bento-item {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+        .bento-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .bento-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .bento-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+    .bento-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 2rem;
+    }
+
+    .bento-title {
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Movie Horizontal Rows */
+    .movie-row {
+        padding: 80px 0;
+    }
+
+        .movie-row.alt {
+            background-color: var(--surface-container-low);
+        }
+
+    .category-header {
+        border-left: 4px solid var(--primary-accent);
+        padding-left: 1rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+   
+
+    .horizontal-scroll {
+        display: grid;
+        /* grid-template-columns: repeat(3, 1fr); /* 3 por fila */ 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));/*se adapten solas según el tamaño de pantalla */
+        gap: 1.5rem;
+    }
+
+
+  
+
+        .movie-card img {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .movie-card:hover img {
+            transform: scale(1.05);
+        }
+
+    .movie-card-title {
+        margin-top: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: color 0.3s ease;
+    }
+
+    .movie-card:hover .movie-card-title {
+        color: var(--primary-accent);
+    }
+
+    .movie-card-meta {
+        display: flex;
+        justify-content: space-between;
+        color: var(--on-surface-variant);
+        font-size: 14px;
+    }
+
+    .stars {
+        color: var(--secondary);
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 80px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+        .footer-links a {
+            color: var(--on-surface-variant);
+            text-decoration: underline;
+            text-decoration-color: var(--primary-accent);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+            .footer-links a:hover {
+                color: #fff;
+            }
+
+    .copyright {
+        color: var(--on-surface-variant);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Material Symbols adjustment */
+    .material-symbols-outlined {
+        vertical-align: middle;
+        font-size: 20px;
+    }
+
+    .fill {
+        font-variation-settings: 'FILL' 1;
+    }
+
+   
+
+</style>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-backdrop">
+        <img alt="Interstellar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5gMiltEzYsdHW6BgdkXobWfo9gMzoGqtB_ISK5uENhCTmedO-PyJx-JlOtdUvgyTviyWHcMGc1RX48tkw8jm1bxnzl9v5DKrV5Vdt4_6JUJI1GpxLyzuGBPjvRylBSeVOr3_zicTKRNHKwl68GbKnhPFUet4uirLspW9z31GLg3c0ZgaZr4oy5LJ3WAIE7rGlCP_gi-oLk2BI8A9cgp9-xqbesBvHWoFRCR1BWRqDUNTPXtQjzyCFzhrwL9vAhwO5bFwqeajM2jY" />
+        <div class="hero-gradient"></div>
+    </div>
+    <div class="container-fluid px-5">
+        <div class="hero-content">
+            <span class="hero-label">Featured Editorial</span>
+            <h1 class="hero-title">Interstellar</h1>
+            <div class="hero-meta d-flex align-items-center gap-4">
+                <span class="d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fill text-info" style="font-size: 16px;">star</span> 8.7
+                </span>
+                <span>2014</span>
+                <span>2h 49m</span>
+                <span class="genre-badge">Sci-Fi</span>
+            </div>
+            <p class="text-secondary-emphasis mb-4 fs-5" style="max-width: 650px; color: var(--on-surface-variant) !important;">
+                A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival. A masterpiece of modern cinema that blends physics with deep human emotion.
+            </p>
+            <div class="d-flex gap-3">
+                <button class="btn btn-primary-custom d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined fill">play_arrow</span> WATCH NOW
+                </button>
+                <button class="btn btn-secondary-custom d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined">add</span> MY LIST
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Bento Grid Style -->
+<section class="bento-section">
+    <div class="container-fluid px-5">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title h3">Recomendadas por IA</h2>
+                <p class="section-subtitle m-0">Curated based on your editorial preferences</p>
+            </div>
+            <a class="view-all-link" href="#">View All</a>
+        </div>
+        <div class="bento-container">
+            <div class="bento-item large">
+                <img alt="Blade Runner 2049" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoPwJ602jZaVJzeKGGT6fgFWd5pd2m8gPlHmqDjKAHoJXgCqOBJTuhrkYP3nM0E_JgNMbosoLrQLawgVYb1PyCiURe2jDfSsqIBgI-Wh6scjuL7APJcdJBerKDl-WdMP1z2yJtDb6GMunmXUh6TjV8qcHiXmPHTbAA6Jxtwu7aSTKF8etv4TPYGZ0mpTInyrTQTxeXP7XOrwEw-qwAivSmp9oww9DnFW5F70I4UQ5qKqG7E48tgCP0SYKkUGJ_9Y0CvVvGtHACSNw" />
+                <div class="bento-overlay">
+                    <h3 class="bento-title h1 m-0">Blade Runner 2049</h3>
+                    <div class="d-flex gap-2 align-items-center text-info fs-6">
+                        <span class="material-symbols-outlined fill fs-6">star</span> 4.8/5
+                        <span style="color: var(--on-surface-variant)">• 2017</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img alt="The Revenant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgYutSTZs1qG6wQTMhYvuUFzvoG9J8iry10FrBV1mU9u6TnHLdtq3SMWjgSBQspe8CNlKfJi_hzw4Ax2vRlJHUNqVrYKAmebb42KNzh_KP2GZwetIKy1qTsPCod8HmVYl17bMpcpUX8V7ppBmgR7DyS4Df_pvhFNykU2QD4CphfMDZXZUAx1_3WdqOcg_E6vF6gkIX0rH_suovXmAwTpE_Y2MbB0JQQXsDqgr7ntLSzQ4NA5iuDg2Olr4LKpMzJt4mBv0873TQvaY" />
+                <div class="bento-overlay">
+                    <h3 class="bento-title h5 m-0">The Revenant</h3>
+                    <span style="color: var(--on-surface-variant); font-size: 12px;">2015</span>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img alt="Cinema Paradiso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4E8ZmVAbtTBsy8XNWnjTmxQ6D8yxAF7shtnI5oYe0tUPj2B0ltQZ91WWUpcIVFdSZCfGcLcJLaE_VpcCLP7HzHGwyQKq8tRyr-J0B0gjQLcDfUqiLi7mMYgUrxrJxCJVSLID20gq2tyzbtKJwhI7n9sYDDGG0zqG-cXuXPqUIWX6gYHkq-p_mx4axo9k0AItES87frLO8mzGTw6wWnHFGqnJSKI3LRp20yDCq1uMnB7WrfDlDRHe3SSUKLUj7SVszFH52OvCtrHU" />
+                <div class="bento-overlay">
+                    <h3 class="bento-title h5 m-0">Cinema Paradiso</h3>
+                    <span style="color: var(--on-surface-variant); font-size: 12px;">1988</span>
+                </div>
+            </div>
+            <div class="bento-item" style="grid-column: span 2;">
+                <img alt="Everything Everywhere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdv0TZ0n_STrmTXm6qfQuPWbqH4BaJ2v0y1iZ9X97gravrmIwbEodf_gacQFDGqmiu6AU7vRJEVfzhwSq02UkcVzJJWMB5u6Y51csYikPWi2vDHgpB1izTMsyLohPaFoMpTG6zjy1XJSoWNWucRvMUeBActxF0zbEAhJOwSyGX6tnFhQ96Tp-52YGpO-VwBxb0209zCZ-zvd6krAm0digazM1iULhCg6_jKC_C_CS6g7kuRElw3EXAvtVzAzzCD3Wn8RNlJpbRMvE" />
+                <div class="bento-overlay">
+                    <h3 class="bento-title h3 m-0">Everything Everywhere</h3>
+                    <span style="color: var(--on-surface-variant); font-size: 14px;">2022</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Movie Row: Action -->
+<section class="movie-row">
+    <div class="container-fluid px-5">
+        <div class="horizontal-scroll">
+
+            @foreach (var pelicula in Model)
+            {
+                
+            <div class="movie-card">
+                <div class="position-relative">
+                    <img alt="@pelicula.Titulo" src="@pelicula.PosterUrlPortada" />
+                    <div class="position-absolute top-0 end-0 m-3 badge bg-black bg-opacity-75">4K HDR</div>
+                </div>
+                <h3 class="movie-card-title h6">@pelicula.Titulo</h3>
+                <div class="movie-card-meta">
+                    <span>@pelicula.FechaLanzamiento</span>
+                    <div class="stars">
+                        <span class="material-symbols-outlined fill">star</span>
+                        <span class="material-symbols-outlined fill">star</span>
+                        <span class="material-symbols-outlined fill">star</span>
+                        <span class="material-symbols-outlined fill">star</span>
+                        <span class="material-symbols-outlined fill">star</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
